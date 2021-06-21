@@ -1,0 +1,17 @@
+{
+  "name": "e-catalog-server",
+  "version": "0.0.1",
+  "scripts": {},
+  "author": "Uros Vardic",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.16.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.4",
+    "eslint": "^7.29.0",
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.4"
+  }
+}
