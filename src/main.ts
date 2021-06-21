@@ -1,2 +1,2 @@
-const ime: string = "Pera"
+const ime: string = "AAasdasdAA"
 console.log(ime);
