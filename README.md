@@ -15,4 +15,4 @@ Sa korisničke strane treba omogućiti prikaz svih artikala poređanih po ceni (
 - Izrada oba dela aplikacije (projekata) i promene kodova datoteka tih projekata moraju da bude praćene korišćenjem alata za verziranje koda Git, a kompletan kôd aplikacije bude dostupan na javnom Git spremištu, npr. na besplatnim GitHub ili Bitbucket servisima, jedno spremište za back-end projekat i jedno za front-end projekat. Ne može ceo projekat da bude otpremljen u samo nekoliko masovnih Git commit-a, već mora da bude pokazano da je projekat realizovan u kontinuitetu, da su korišćene grane (branching), da je bilo paralelnog rada u više grana koje su spojene (merging) sa ili bez konflikata (conflict resolution).
 
 ## Razrada projektne dokumentacije
-- [Model podataka](./doc/Database-model.md)
+- [Model podataka](doc/DatabaseModel.md)
