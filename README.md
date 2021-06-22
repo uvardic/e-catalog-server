@@ -16,3 +16,4 @@ Sa korisničke strane treba omogućiti prikaz svih artikala poređanih po ceni (
 
 ## Razrada projektne dokumentacije
 - [Model podataka](doc/DatabaseModel.md)
+- [Model sistema](doc/SystemModel.md)

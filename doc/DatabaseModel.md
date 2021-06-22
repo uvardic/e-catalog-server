@@ -1,6 +1,6 @@
 # Model baze podataka
 
-![Relacije između entiteta](../resources/model/database.png)
+![Relacije između entiteta](../resources/database/database.png)
 
 # Opis baze podataka
 
