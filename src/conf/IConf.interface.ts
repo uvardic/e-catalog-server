@@ -13,5 +13,16 @@ export default interface IConfig {
             dotfiles: 'deny' | 'allow',
             maxAge: number
         }
+    },
+
+    database: {
+        host: string,
+        port: number,
+        user: string,
+        password: string,
+        database: string,
+        charset: string,
+        timezone: string,
+        supportBigNumbers: boolean
     }
 }

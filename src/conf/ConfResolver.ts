@@ -16,6 +16,17 @@ const dev: IConfig = {
             dotfiles: 'deny',
             maxAge: 3600000
         }
+    },
+
+    database: {
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: 'root',
+        database: 'e_catalog',
+        charset: 'utf8',
+        timezone: '+01:00',
+        supportBigNumbers: true
     }
 }
 
