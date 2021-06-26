@@ -4,6 +4,7 @@ import * as confResolver from './conf/ConfResolver'
 import * as mysql from 'mysql2/promise'
 import UserRouter from './user/router/UserRouter'
 import ApplicationResources from './common/IApplicationResources'
+import {Router} from './router'
 
 async function main() {
     const app: express.Application = express()
@@ -11,15 +12,17 @@ async function main() {
     const resources: ApplicationResources = {
         databaseConnection: await mysql.createConnection(conf.database)
     }
+    resources.databaseConnection.connect()
 
     app.use(cors())
     app.use(express.json())
-    resources.databaseConnection.connect()
     app.use(
         conf.static.rout,
         express.static(conf.static.path, conf.static.options)
     )
-    UserRouter.setupRoutes(app, resources)
+    Router.setupRoutes(app, resources, [
+        new UserRouter()
+    ])
     app.listen(conf.server.port)
 }
 

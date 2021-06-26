@@ -2,10 +2,11 @@ import * as express from 'express'
 import UserService from '../service/UserService'
 import UserController from '../controller/UserController'
 import IApplicationResources from '../../common/IApplicationResources'
+import {IRouter} from '../../router'
 
-export default class UserRouter {
+export default class UserRouter implements IRouter {
 
-    public static setupRoutes(app: express.Application, resources: IApplicationResources) {
+    setupRoute(app: express.Application, resources: IApplicationResources) {
         const userService: UserService = new UserService(resources)
         const userController: UserController = new UserController(userService)
 
