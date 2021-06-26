@@ -1,18 +1,15 @@
 import * as express from 'express'
 import * as cors from 'cors'
-import * as confResolver from './conf/ConfResolver'
-import * as mysql from 'mysql2/promise'
+import * as confResolver from './conf'
 import UserRouter from './user/router/UserRouter'
-import ApplicationResources from './common/IApplicationResources'
 import {Router} from './router'
+import {Context} from './context'
+import UserService from './user/service/UserService'
 
 async function main() {
     const app: express.Application = express()
-    const conf = confResolver.getConf('dev')
-    const resources: ApplicationResources = {
-        databaseConnection: await mysql.createConnection(conf.database)
-    }
-    resources.databaseConnection.connect()
+
+    const conf = confResolver.get('dev')
 
     app.use(cors())
     app.use(express.json())
@@ -20,10 +17,17 @@ async function main() {
         conf.static.rout,
         express.static(conf.static.path, conf.static.options)
     )
-    Router.setupRoutes(app, resources, [
+    app.listen(conf.server.port)
+
+    const context = Context.getInstance()
+
+    context.connectToDatabase(conf.database)
+    context.registerService(
+        new UserService()
+    )
+    Router.setupRoutes(app, [
         new UserRouter()
     ])
-    app.listen(conf.server.port)
 }
 
 main()

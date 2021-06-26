@@ -1,16 +1,15 @@
 import * as express from 'express'
-import IApplicationResources from './common/IApplicationResources'
 
 interface IRouter {
 
-    setupRoute(app: express.Application, resources: IApplicationResources)
+    setupRoute(app: express.Application)
 
 }
 
 class Router {
 
-    public static setupRoutes(app: express.Application, resources: IApplicationResources, routes: IRouter[]) {
-        routes.forEach(route => route.setupRoute(app, resources))
+    public static setupRoutes(app: express.Application, routes: IRouter[]) {
+        routes.forEach(route => route.setupRoute(app))
     }
 
 }
